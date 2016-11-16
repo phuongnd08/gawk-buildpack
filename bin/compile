@@ -26,9 +26,4 @@ cp $awk_cache/gawk $build_dir
 PATH=$build_dir:$PATH
 gawk -V
 
-# create a launcher to wrap env vars passing
-echo "#!/usr/bin/env bash\n" > $build_dir/awk-start
-echo "/app/gawk -v PORT=\"\$PORT\" -v HOST=\"\$VCAP_APP_HOST\" -f \$1" >> $build_dir/awk-start
-chmod +x $build_dir/awk-start
-
 
